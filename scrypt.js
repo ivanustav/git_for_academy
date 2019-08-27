@@ -12,6 +12,6 @@ function trimStr(str, maxlength) {
     return (str.length > maxlength) ?
       str.slice(0, maxlength - 1) + '…' : str;
 }
-let sd = 1;
+
 console.log(strProcessing('sdflksdfksfkfjasl falksjfjalksdfalsjd sdlfkjasljdkfasdjlfk dsalkjfalsjkdf'));
 
