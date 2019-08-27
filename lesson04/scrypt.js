@@ -45,7 +45,7 @@ let getStatusIncome = function() {
     }
 };
 
-alert(getStatusIncome());
+console.log(getStatusIncome());
 
 // 1. пункт обязательного задания
 
@@ -54,20 +54,20 @@ alert(getStatusIncome());
 function getExpensesMonth(expensesOne, expensesTwo) {
     return expensesOne + expensesTwo;
 }
-alert(getExpensesMonth(expensesSum1, expensesSum2));
+console.log(getExpensesMonth(expensesSum1, expensesSum2));
 
 // Накопления за месяц
 function getAccumulatedMonth(inc, consum) {
     let accumulatedMonth = inc - consum;
     return accumulatedMonth;
 }
-alert(getAccumulatedMonth(money, getExpensesMonth(expensesSum1, expensesSum2)));
+console.log(getAccumulatedMonth(money, getExpensesMonth(expensesSum1, expensesSum2)));
 
 //  Достижение цели
 let getTargetMonth = function() {
     return Math.round(mission / getAccumulatedMonth(money, getExpensesMonth(expensesSum1, expensesSum2)));
 };
-alert(getTargetMonth());
+console.log(getTargetMonth());
 
 
 //  2 пункт обязательного задания
