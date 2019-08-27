@@ -65,7 +65,7 @@ alert(getAccumulatedMonth(money, getExpensesMonth(expensesSum1, expensesSum2)));
 
 //  Достижение цели
 let getTargetMonth = function() {
-    return mission / getAccumulatedMonth(money, getExpensesMonth(expensesSum1, expensesSum2));
+    return Math.round(mission / getAccumulatedMonth(money, getExpensesMonth(expensesSum1, expensesSum2)));
 };
 alert(getTargetMonth());
 
