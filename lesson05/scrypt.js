@@ -25,9 +25,10 @@ showTypeOf(deposit);
 
 let expenses1,
     expenses2;
-
+    
 function getExpensesMonth() {
-    let sum = 0;
+    let sum = 0,
+        counter;
     
     for (let i = 0; i < 2; i++) {
         if (i === 0) {
@@ -36,9 +37,11 @@ function getExpensesMonth() {
         if (i === 1) {
             expenses2 = prompt('Введите обязательную статью расходов', 'Бензин');
         }
-        
-            sum += +prompt('Во сколько это обойдется?', 2500);   
-        
+        do {
+            counter = prompt('Во сколько это обойдется?', 2500); 
+        } while(isNaN(counter) || counter === '' || counter === null);
+              
+        sum += +counter;
               
     }
         
