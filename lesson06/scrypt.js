@@ -97,17 +97,27 @@ getExpensesMonth: function() {
 
 //!!методы вызывай без вывода в консоль :) Ты теперь обращаешься к объекту
 appData.asking(); 
-appData.getBudget();
-appData.getTargetMonth();
-appData.getStatusIncome()
 appData.getExpensesMonth();
+appData.getBudget();
+
+
+
 /*вызови, когда оно будет готово*/
 
 
 //А вот то, что необходимо вывести именно в консоль:
 
 console.log('Расходы за месяц:' + appData.expensesMonth);
+console.log(appData.getTargetMonth());
+console.log(appData.getStatusIncome());
 
+
+function overview() {
+    
+    console.log('Наша программа включает в себя ' + Object.keys(appData));
+    
+}
+overview();
 
 /*будет отображать данные, когда посчитаешь расходы в методе. пока тут 0*/
 
