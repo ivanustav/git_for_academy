@@ -49,7 +49,7 @@ let appData = {
     budgetMonth: 0,
     expensesMonth: 0,
     getAccumulatedMonth: function() {
-        let accumulatedMonth = money - expensesAmount;
+        let accumulatedMonth = appData.budget - appData.expensesAmount;
         return accumulatedMonth;
     },
     getTargetMonth: function() {
