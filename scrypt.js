@@ -1,13 +1,18 @@
-function highlightDays() {
-    let week = ["Понедельник\n", "Вторник\n", "Среда\n", "Четверг\n", "Пятница\n", "Суббота\n", "Воскресенье"]
 
-week.forEach((em, i) => {
-    i++;
-    let tagName = (i === 6 || i === 7) ? 'oblique' : 'span';
-    let newEm = document.createElement(tagName);
-    newEm.innerHTML = em;
-    document.body.appendChild(newEm);
-});
+let week = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'],
+    toDay = new Date().getDay() - 1;
+
+for (let i = 0; i < week.length; i++) {
+    if (i == toDay) {
+        if (week[i] == 'сб' || week[i] == 'вс') {
+            document.write(`<p><b><i>${week[i]}</i></b></p>`);
+        } else {
+            document.write(`<p><b>${week[i]}</b></p>`);
+        }
+    } else if (week[i] == 'сб' || week[i] == 'вс') {
+        document.write(`<p><b>${week[i]}</b></p>`);
+    } else {
+        document.write(`<p>${week[i]}</p>`);
+    }
 }
-
-console.log(highlightDays());
+console.log(week);
