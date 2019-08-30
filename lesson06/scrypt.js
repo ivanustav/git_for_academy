@@ -113,8 +113,11 @@ console.log(appData.getStatusIncome());
 
 
 function overview() {
-    
-    console.log('Наша программа включает в себя ' + Object.keys(appData));
+    console.log('Наша программа включает в себя:');
+    for (let key in appData) {
+        
+        console.log('Ключ: ' + key + ' значение: ' + appData[key]);
+    }
     
 }
 overview();
