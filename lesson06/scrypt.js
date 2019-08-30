@@ -44,7 +44,7 @@ let appData = {
             }
             while (isNaN(answer) || answer === '' || answer === null);
             
-			appData.expenses[ask] = +answer; /
+			appData.expenses[ask] = +answer; 
         } 
         
         
@@ -66,22 +66,22 @@ getExpensesMonth: function() {
 
         let result = Math.round(appData.mission / appData.budgetMonth); //поправила тут
             if (result > 0) {
-                console.log(`Вы достигните цели через: ${result} месяцев.`);
+                return `Вы достигните цели через: ${result} месяцев.`;
             } else {
-                console.log('Цель не будет достигнута');
+                return 'Цель не будет достигнута';
             }
     },
 
     getStatusIncome: function() {
 
         if (appData.budgetDay >= 800) {
-            console.log('Высокий уровень дохода');
+            return 'Высокий уровень дохода';
         } else if (appData.budgetDay > 300 && appData.budgetDay < 800) {
-            console.log('Средний уровень дохода');
+            return 'Средний уровень дохода';
         } else if (appData.budgetDay >= 0 && appData.budgetDay <= 300) {
-            console.log('Низкий уровень дохода');   
+            return 'Низкий уровень дохода';   
         } else {
-            console.log('Что-то пошло не так');
+            return 'Что-то пошло не так';
             
         }
     }
