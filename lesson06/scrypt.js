@@ -19,21 +19,18 @@ let appData = {
     mission: 50000,
     period: 7,
 
-    //это тоже должно быть именно здесь!)
-    //в свойствах объекта не допускай беспорядка, пожалуйста
     budget: money,
     budgetDay: 0, 
     budgetMonth: 0,
     expensesMonth: 0, 
 
-    //пошли методы объекта:
+
 
     asking: function () {
 
         let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую?');
             appData.addExpenses = addExpenses.toLowerCase().split(',');
             appData.deposit = confirm('Есть ли у вас депозит в банке?'); 
-            //вопросы перенеси повыше, чтоб путаницы не было
 
         let ask,
             answer;
@@ -47,12 +44,10 @@ let appData = {
             }
             while (isNaN(answer) || answer === '' || answer === null);
             
-			appData.expenses[ask] = +answer; //записываем в объект expenses, да, и всё-таки можно не дублировать эту строку, так как названия переменных одинаковые, а кол-во итераций регулируется циклом
-        } /*чтобы проверить записались ли в объект наши данные, когда программа отработает, прямо в консоли напиши:
+			appData.expenses[ask] = +answer; /
+        } 
         
-        appData.expenses 
         
-        и сможешь увидеть статьи расходов и цены :) */
     },
 
 // метод подсчёта расходов за месяц
@@ -62,12 +57,10 @@ getExpensesMonth: function() {
     }
 },
 
-//новый метод вместо getAccumulatedMonth, тебе необходимо было обратиться к свойствам и..: 
     getBudget: function() {
         appData.budgetMonth = appData.budget - appData.expensesMonth;
         appData.budgetDay = Math.floor(appData.budgetMonth / 30);
     },
-//не заморачивайся с return, это больше не имеет смысла. Производим элементарные арифметические действия, а результат записывается в объект :) 
 
     getTargetMonth: function() {
 
@@ -95,17 +88,11 @@ getExpensesMonth: function() {
 
 };
 
-//!!методы вызывай без вывода в консоль :) Ты теперь обращаешься к объекту
+
 appData.asking(); 
 appData.getExpensesMonth();
 appData.getBudget();
 
-
-
-/*вызови, когда оно будет готово*/
-
-
-//А вот то, что необходимо вывести именно в консоль:
 
 console.log('Расходы за месяц:' + appData.expensesMonth);
 console.log(appData.getTargetMonth());
@@ -121,8 +108,3 @@ function overview() {
     
 }
 overview();
-
-/*будет отображать данные, когда посчитаешь расходы в методе. пока тут 0*/
-
-//ещё надо достижение цели
-//и уровень дохода
