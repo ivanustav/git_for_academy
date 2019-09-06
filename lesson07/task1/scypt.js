@@ -23,7 +23,7 @@ advertising.remove('adv');
 
 
 
-target[4].textContent ='Вот именно так можно написать,что захочешь';
+target[4].textContent ='"Книга 3. this и Прототипы Объектов"';
 
 
 
